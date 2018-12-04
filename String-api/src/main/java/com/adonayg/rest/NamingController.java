@@ -32,8 +32,8 @@ public class NamingController {
 	}
 
 	@DeleteMapping("${URL.method.deleteName}")
-	public void deleteName(@PathVariable Long ID) {
-		service.delete(ID);
+	public String deleteName(@PathVariable Long ID) {
+		return service.delete(ID);
 	}
 
 	@PostMapping("${URL.method.addName}")
