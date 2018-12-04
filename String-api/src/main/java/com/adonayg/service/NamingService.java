@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.adonayg.domain.Name;
 import com.adonayg.repository.NamingRepository;
+import com.adonayg.util.NameProducer;
 import com.adonayg.util.NamingRestTemplate;
 
 @Service
@@ -17,6 +18,9 @@ public class NamingService implements INamingService {
 	
 	@Autowired
 	private NamingRestTemplate apiCaller;
+	
+	@Autowired
+	private NameProducer producer;
 
 	public Iterable<Name> getAll() {
 		return namingRepo.findAll();
@@ -33,6 +37,7 @@ public class NamingService implements INamingService {
 
 	public Name add(Name name) {
 		name.setName(name.getPrefix() + apiCaller.getRandomName(name.getCharLenght()));
+		producer.produce(name);
 		return namingRepo.save(name);
 	}
 
