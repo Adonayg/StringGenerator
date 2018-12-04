@@ -14,7 +14,7 @@ public class NameController {
 	private NameService service;
 
 	@RequestMapping("${URL.method}")
-	public String getPrize(@PathVariable int charLength) {
+	public String generateName(@PathVariable int charLength) {
 		return service.generateName(charLength);
 
 	}
