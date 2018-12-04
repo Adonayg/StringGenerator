@@ -6,15 +6,15 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 import com.adonayg.domain.NameMessage;
-import com.adonayg.service.ConsumerService;
+import com.adonayg.service.IConsumerService;
 
 @Component
 public class NameConsumer {
 	
 	@Autowired
-	private ConsumerService service;
+	private IConsumerService service;
 
-	@JmsListener(destination = "Names", containerFactory = "myFactory")
+	@JmsListener(destination = "${db.name}", containerFactory = "${db.factory}")
 	public void receiveMessage(NameMessage name) {
 		name.set_id(ObjectId.get());
 		service.add(name);

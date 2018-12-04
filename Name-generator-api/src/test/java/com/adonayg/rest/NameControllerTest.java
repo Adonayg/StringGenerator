@@ -9,7 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.adonayg.service.NameService;
+import com.adonayg.service.INameService;
 
 public class NameControllerTest {
 
@@ -17,7 +17,7 @@ public class NameControllerTest {
 	private NameController controller;
 
 	@Mock
-	private NameService service;
+	private INameService service;
 
 	@Before
 	public void init() {
