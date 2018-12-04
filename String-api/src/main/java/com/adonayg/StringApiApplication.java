@@ -1,4 +1,4 @@
-package com.adonayg.Stringapi;
+package com.adonayg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
