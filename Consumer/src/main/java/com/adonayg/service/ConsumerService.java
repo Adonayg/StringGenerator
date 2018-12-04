@@ -9,10 +9,11 @@ import com.adonayg.domain.NameMessage;
 import com.adonayg.repository.ConsumerRepository;
 
 @Service
-public class ConsumerService {
+public class ConsumerService implements IConsumerService {
 
 	@Autowired
 	private ConsumerRepository consumerRepo;
+
 
 	public Iterable<NameMessage> getAll() {
 		return consumerRepo.findAll();

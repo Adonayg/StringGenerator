@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.adonayg.util.NameGenerator;
 
 @Service
-public class NameService {
+public class NameService implements INameService {
 	
 	@Autowired
 	private NameGenerator generator;
