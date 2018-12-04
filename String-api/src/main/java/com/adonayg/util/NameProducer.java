@@ -18,7 +18,7 @@ public class NameProducer {
 
 	public String produce(Name name) {
 		nameMessage.setName(name.getName());
-		jmsTemplate.convertAndSend("Names", nameMessage);
+		jmsTemplate.convertAndSend("${que.name}", nameMessage);
 		return "${successful.message}";
 	}
 }

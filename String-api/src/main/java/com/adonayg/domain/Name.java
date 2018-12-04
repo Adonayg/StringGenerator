@@ -10,7 +10,7 @@ public class Name {
 	@GeneratedValue
 	private long id;
 	private String prefix;
-	private int charLenght;
+	private int charLength;
 	private String name;
 	
 	public Name() {
@@ -29,11 +29,11 @@ public class Name {
 	public void setPrefix(String prefix) {
 		this.prefix = prefix;
 	}
-	public int getCharLenght() {
-		return charLenght;
+	public int getCharLength() {
+		return charLength;
 	}
-	public void setCharLenght(int charLenght) {
-		this.charLenght = charLenght;
+	public void setCharLength(int charLength) {
+		this.charLength = charLength;
 	}
 	public String getName() {
 		return name;
