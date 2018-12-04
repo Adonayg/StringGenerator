@@ -3,6 +3,7 @@ package com.adonayg.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -26,6 +27,9 @@ public class NamingService implements INamingService {
 	
 	@Autowired
 	private NamingRules potentialName;
+	
+	@Value("${dikembe}")
+	private String dikembe;
 
 	public Iterable<Name> getAll() {
 		return namingRepo.findAll();
@@ -47,7 +51,7 @@ public class NamingService implements INamingService {
 			name.setName(name.getPrefix());
 		}
 		if (!potentialName.isAppropriate(name)) {
-			name.setName("${dikembe}");
+			name.setName(dikembe);
 		}
 		if (potentialName.isNameToLong(name)) {	
 			name.setName(name.getName().substring(0, 6));
